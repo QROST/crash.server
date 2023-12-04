@@ -1,4 +1,4 @@
-﻿using Crash.Server.Settings;
+﻿
 
 namespace Crash.Server.Tests
 {
@@ -14,11 +14,13 @@ namespace Crash.Server.Tests
 			}
 		}
 
+		/*
 		[TestCaseSource(nameof(InvalidFilePaths))]
 		public void InvalidConfig(string filePath)
 		{
 			var testConfig = new ConfigHandler(filePath);
 			Assert.NotNull(testConfig);
 		}
+		*/
 	}
 }

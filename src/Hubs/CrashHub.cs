@@ -338,11 +338,19 @@ namespace Crash.Server.Hubs
 		{
 			await base.OnConnectedAsync();
 
+			await Clients.Caller.InitializeHandshake(GetHandshakeConfig());
+			
 			var changes = Database.GetChanges();
 			await Clients.Caller.InitializeChanges(changes.Select(c => new Change(c)));
 
 			var users = Database.GetUsers();
 			await Clients.Caller.InitializeUsers(users);
+		}
+
+		private Dictionary<string, string> GetHandshakeConfig()
+		{
+			Dictionary<string, string> keyValuePairs = new();
+			keyValuePairs.Add("Version", );
 		}
 	}
 }

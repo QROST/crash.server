@@ -36,5 +36,7 @@
 		/// <param name="user"></param>
 		/// <returns></returns>
 		Task UpdateUser(string user);
+
+		Task InitializeHandshake(Dictionary<string, string> keyValuePairs);
 	}
 }
